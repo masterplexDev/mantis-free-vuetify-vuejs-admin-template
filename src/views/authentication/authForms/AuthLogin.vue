@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons-vue';
 import { useAuthStore } from '@/stores/auth';
 import { Form } from 'vee-validate';
-
+import Logo from '@/layouts/dashboard/logo/LogoDark.vue';
 const checkbox = ref(false);
 const valid = ref(false);
 const show1 = ref(false);
@@ -24,10 +24,23 @@ function validate(values: any, { setErrors }: any) {
 </script>
 
 <template>
-  <div class="d-flex justify-space-between align-center">
-    <h3 class="text-h3 text-center mb-0">Login</h3>
-    <router-link to="/auth/register" class="text-primary text-decoration-none">Don't Have an account?</router-link>
-  </div>
+  <v-container class="w-100">
+    <v-row>
+      <v-col cols="12" class="justify-center">
+        <RouterLink to="/dashboard" aria-label="logo">
+          <v-img 
+              src="http://www.doctor-ag.com/images/common/logo.png" 
+              class="logo_size"
+          ></v-img>
+        </RouterLink>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-span>닥터애그 스마트팜 시스템</v-span>
+      </v-col>
+    </v-row>
+  </v-container>
   <Form @submit="validate" class="mt-7 loginForm" v-slot="{ errors, isSubmitting }">
     <div class="mb-6">
       <v-label>Email Address</v-label>
@@ -92,4 +105,7 @@ function validate(values: any, { setErrors }: any) {
     font-weight: 500;
   }
 }
+</style>
+<style scoped>
+ .logo_size {max-width: 500px; max-height: 70px; text-align: center;}
 </style>
