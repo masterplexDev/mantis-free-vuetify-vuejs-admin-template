@@ -1,10 +1,7 @@
 <template>
   <div class="logo">
     <RouterLink to="/dashboard" aria-label="logo">
-      <v-img 
-          src="http://www.doctor-ag.com/images/common/logo.png" 
-          class="logo_size"
-      ></v-img>
+      <img class="justify-center logo_size ml-3" src="@/assets/images/logo.png"/>
     </RouterLink>
   </div>
 </template>
@@ -15,5 +12,5 @@ const primary = ref('rgb(var(--v-theme-primary))');
 const darkprimary = ref('rgb(var(--v-theme-darkprimary))');
 </script>
 <style scoped>
- .logo_size {max-width: 180px; max-height: 70px;}
+ .logo_size {max-width: 400px; max-height: 100px;}
 </style>

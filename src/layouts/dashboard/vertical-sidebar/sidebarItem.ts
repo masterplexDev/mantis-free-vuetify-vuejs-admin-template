@@ -8,7 +8,8 @@ import {
   FontSizeOutlined,
   BgColorsOutlined,
   BarcodeOutlined,
-  CrownOutlined
+  CrownOutlined,
+  DatabaseOutlined
 } from '@ant-design/icons-vue';
 
 export interface menu {
@@ -28,23 +29,28 @@ export interface menu {
 }
 
 const sidebarItem: menu[] = [
-  { header: 'Navigation' },
+  { header: '군자 표고버섯 농장' },
   {
-    title: 'Dashboard',
+    title: '표고 농장 대시보드',
     icon: DashboardOutlined,
     to: '/dashboard'
   },
-  { header: 'Authentication' },
   {
-    title: 'Login',
-    icon: LoginOutlined,
-    to: '/auth/login'
+    title: '표고 농장 생산 관리',
+    icon: DatabaseOutlined,
+    to: '/managed'
   },
-  {
-    title: 'Register',
-    icon: ProfileOutlined,
-    to: '/auth/register'
-  },
+  // { header: 'Authentication' },
+  // {
+  //   title: 'Login',
+  //   icon: LoginOutlined,
+  //   to: '/auth/login'
+  // },
+  // {
+  //   title: 'Register',
+  //   icon: ProfileOutlined,
+  //   to: '/auth/register'
+  // },
   { header: 'Utilities' },
   {
     title: 'Typography',
@@ -72,15 +78,15 @@ const sidebarItem: menu[] = [
     icon: ChromeOutlined,
     to: '/sample-page'
   },
-  {
-    title: 'Documentation',
-    icon: QuestionOutlined,
-    to: 'https://codedthemes.gitbook.io/mantis-vuetify/',
-    type: 'external',
-    chip: 'gitbook',
-    chipColor: 'secondary',
-    chipVariant: 'flat'
-  }
+  // {
+  //   title: 'Documentation',
+  //   icon: QuestionOutlined,
+  //   to: 'https://codedthemes.gitbook.io/mantis-vuetify/',
+  //   type: 'external',
+  //   chip: 'gitbook',
+  //   chipColor: 'secondary',
+  //   chipVariant: 'flat'
+  // }
 ];
 
 export default sidebarItem;
