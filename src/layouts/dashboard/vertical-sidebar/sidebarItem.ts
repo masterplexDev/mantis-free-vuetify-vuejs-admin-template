@@ -51,33 +51,33 @@ const sidebarItem: menu[] = [
   //   icon: ProfileOutlined,
   //   to: '/auth/register'
   // },
-  { header: 'Utilities' },
-  {
-    title: 'Typography',
-    icon: FontSizeOutlined,
-    to: '/typography'
-  },
-  {
-    title: 'Color',
-    icon: BgColorsOutlined,
-    to: '/colors'
-  },
-  {
-    title: 'Shadow',
-    icon: BarcodeOutlined,
-    to: '/shadow'
-  },
-  {
-    title: 'Ant Icons',
-    icon: CrownOutlined,
-    to: '/icon/ant'
-  },
-  { header: 'Support' },
-  {
-    title: 'Sample Page',
-    icon: ChromeOutlined,
-    to: '/sample-page'
-  },
+  // { header: 'Utilities' },
+  // {
+  //   title: 'Typography',
+  //   icon: FontSizeOutlined,
+  //   to: '/typography'
+  // },
+  // {
+  //   title: 'Color',
+  //   icon: BgColorsOutlined,
+  //   to: '/colors'
+  // },
+  // {
+  //   title: 'Shadow',
+  //   icon: BarcodeOutlined,
+  //   to: '/shadow'
+  // },
+  // {
+  //   title: 'Ant Icons',
+  //   icon: CrownOutlined,
+  //   to: '/icon/ant'
+  // },
+  // { header: 'Support' },
+  // {
+  //   title: 'Sample Page',
+  //   icon: ChromeOutlined,
+  //   to: '/sample-page'
+  // },
   // {
   //   title: 'Documentation',
   //   icon: QuestionOutlined,
