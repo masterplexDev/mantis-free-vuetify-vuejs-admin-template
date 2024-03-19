@@ -99,11 +99,11 @@ const chartOptions2 = computed(() => {
 const areaChart1 = {
   series: [
     {
-      name: 'Page Views',
+      name: '배지 사용량',
       data: [31, 40, 28, 51, 42, 109, 100]
     },
     {
-      name: 'Sessions',
+      name: '배지 신규 사용량',
       data: [11, 32, 45, 32, 34, 52, 41]
     }
   ]
@@ -112,11 +112,11 @@ const areaChart1 = {
 const areaChart2 = {
   series: [
     {
-      name: 'Page Views',
+      name: '배지 사용량',
       data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35]
     },
     {
-      name: 'Sessions',
+      name: '배지 신규 사용량',
       data: [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41]
     }
   ]
@@ -129,7 +129,7 @@ const tab = ref(1);
   <v-card class="title-card" variant="text">
     <v-card-item class="pb-2 px-0 pt-0">
       <div class="d-flex justify-space-between">
-        <v-card-title class="text-h5">Unique Visitor</v-card-title>
+        <v-card-title class="text-h5">배지 사용증가 추이</v-card-title>
         <div class="d-flex flex-wrap">
           <v-tabs v-model="tab" color="primary" class="tabBtn" density="compact" hide-slider>
             <v-tab value="one" class="mr-1" variant="outlined" rounded="md"> Month </v-tab>

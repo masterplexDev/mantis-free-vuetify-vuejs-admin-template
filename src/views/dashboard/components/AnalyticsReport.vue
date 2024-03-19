@@ -74,22 +74,22 @@ const lineChart1 = {
 
 const reports = shallowRef([
   {
-    name: 'Company Finance Growth',
+    name: '표고 생산 수익률',
     percent: '+45.14%'
   },
   {
-    name: 'Company Expenses Ratio',
+    name: '표고 버섯 폐기량',
     percent: '0.58%'
   },
   {
-    name: 'Business Risk Cases',
+    name: '표고 버섯 시장 감소율',
     percent: 'Low'
   }
 ]);
 </script>
 
 <template>
-  <UiTitleCard title="Analytics Report" class-name="px-0 rounded-md overflow-hidden">
+  <UiTitleCard title="표고 버섯 분석지수" class-name="px-0 rounded-md overflow-hidden">
     <v-list class="py-0" aria-busy="true" aria-label="Report list" border>
       <v-list-item :value="item.name" v-for="(item, i) in reports" :key="i">
         <div class="d-inline-flex align-center justify-space-between w-100 gap-2">

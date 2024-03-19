@@ -6,7 +6,7 @@ import { RiseOutlined, FallOutlined } from '@ant-design/icons-vue';
 
 const fivecards = shallowRef([
   {
-    name: 'Total Page Views',
+    name: '배지 사용률 (전년도 대비)',
     earn: '4,42,236',
     percent: '59.3%',
     color: 'primary',
@@ -14,7 +14,7 @@ const fivecards = shallowRef([
     text: '35,000'
   },
   {
-    name: 'Total Users',
+    name: '전체 농장 생산량 (전년도 대비)',
     earn: '78,250',
     percent: '70.5%',
     color: 'success',
@@ -22,7 +22,7 @@ const fivecards = shallowRef([
     text: '8,900'
   },
   {
-    name: 'Total Order',
+    name: '배지 판매율 (전년도 대비)',
     earn: '18,800',
     percent: '27.4%',
     color: 'warning',
@@ -30,8 +30,8 @@ const fivecards = shallowRef([
     text: '1,943'
   },
   {
-    name: 'Total Sales',
-    earn: '$35,078',
+    name: '버섯 출고 (전년도 대비)',
+    earn: '35,078',
     percent: '27.4%',
     color: 'error',
     icon: FallOutlined,
@@ -57,9 +57,9 @@ const fivecards = shallowRef([
                     {{ card5.percent }}
                   </v-chip>
                 </h4>
-                <span class="text-lightText text-caption pt-5 d-block"
+                <!-- <span class="text-lightText text-caption pt-5 d-block"
                   >You made an extra <span :class="'text-' + card5.color">{{ card5.text }}</span> this year</span
-                >
+                > -->
               </div>
             </div>
           </v-card-text>
