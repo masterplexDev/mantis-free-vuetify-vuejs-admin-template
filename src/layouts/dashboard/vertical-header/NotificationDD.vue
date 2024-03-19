@@ -53,7 +53,7 @@ function deactivateItem() {
             </template>
             <div class="d-inline-flex justify-space-between w-100">
               <h6 class="text-subtitle-1 font-weight-regular mb-0">
-                [입고 ]표고버섯 원재료가 입고되었습니다.
+                [입고] 표고버섯 원재료가 입고되었습니다.
               </h6>
               <span class="text-caption">3:00 AM</span>
             </div>

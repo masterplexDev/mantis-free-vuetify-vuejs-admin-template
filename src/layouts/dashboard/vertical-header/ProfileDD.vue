@@ -40,21 +40,21 @@ const authStore = useAuthStore();
     </div>
     <v-tabs v-model="tab" color="primary" grow>
       <v-tab value="111"> <UserOutlined class="v-icon--start" /> Profile </v-tab>
-      <v-tab value="222"> <SettingOutlined class="v-icon--start" /> Setting </v-tab>
+      <!-- <v-tab value="222"> <SettingOutlined class="v-icon--start" /> Setting </v-tab> -->
     </v-tabs>
     <perfect-scrollbar style="height: calc(100vh - 300px); max-height: 240px">
       <v-window v-model="tab">
         <v-window-item value="111">
           <v-list class="py-0" aria-label="profile list" aria-busy="true">
-            <v-list-item color="primary" rounded="0" value="Edit profile">
+            <v-list-item color="primary" rounded="0" value="개인정보">
               <template v-slot:prepend>
                 <EditOutlined :style="{ fontSize: '14px' }" class="mr-4" />
               </template>
 
-              <v-list-item-title class="text-h6"> Edit Profile</v-list-item-title>
+              <v-list-item-title class="text-h6">개인정보 수정</v-list-item-title>
             </v-list-item>
 
-            <v-list-item color="primary" rounded="0" value="View Profile">
+            <!-- <v-list-item color="primary" rounded="0" value="View Profile">
               <template v-slot:prepend>
                 <UserOutlined :style="{ fontSize: '14px' }" class="mr-4" />
               </template>
@@ -76,14 +76,14 @@ const authStore = useAuthStore();
               </template>
 
               <v-list-item-title class="text-h6"> Billing</v-list-item-title>
-            </v-list-item>
+            </v-list-item> -->
 
             <v-list-item @click="authStore.logout()" color="secondary" rounded="0">
               <template v-slot:prepend>
                 <LogoutOutlined :style="{ fontSize: '14px' }" class="mr-4" />
               </template>
 
-              <v-list-item-title class="text-subtitle-2"> Logout</v-list-item-title>
+              <v-list-item-title class="text-subtitle-2"> 로그아웃</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-window-item>

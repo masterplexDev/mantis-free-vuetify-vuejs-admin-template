@@ -24,10 +24,17 @@ function validate(values: any, { setErrors }: any) {
 </script>
 
 <template>
-    <v-container class="w-100">
+    <v-container class="w-100 ma-0 pa-0">
         <v-row>
-          <v-col cols="12" class="justify-center">
+          <h3 class="ml-7 mb-10" style="font-weight: bolder;">For the Great Future, We Dream of Green!</h3>
+        </v-row>
+        <v-row class="ma-0 pa-0">
+          <v-col cols="4" class="justify-center ma-0 pa-0">
               <img class="justify-center logo_size ml-3" src="@/assets/images/logo.png"/>
+          </v-col>
+          <v-col cols="8" class="justify-center ma-0 pa-0 pt-8">
+            <br/>
+            <h3 style="font-weight: bolder;">닥터 애그 스마트팜 관제 제어 시스템</h3>
           </v-col>
         </v-row>
       <Form @submit="validate" class="mt-7 loginForm" v-slot="{ errors, isSubmitting }">
@@ -97,5 +104,6 @@ function validate(values: any, { setErrors }: any) {
 }
 </style>
 <style scoped>
- .logo_size {max-width: 1200px; max-height: 255px; text-align: center; vertical-align:middle;}
+ .logo_size {max-width: 300px; max-height: 80px; text-align: center; vertical-align:middle;}
+ h3 {font-size:21px; color:#00a950; font-weight:700; text-align:center;}
 </style>
