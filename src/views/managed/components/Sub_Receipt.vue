@@ -1,7 +1,11 @@
 
 <template>
     <h3>배지 - 입고</h3>
-    <v-stepper :items="['배지 LOT 생성', '배지 검수(기본)', '배지 검수(특이사항)']">
+    <v-stepper 
+        :items="['배지 LOT 생성', '배지 검수(기본)', '배지 검수(특이사항)','해동 입고', '해동', '해동 출고']"
+        next-text="다음"
+        prev-text="이전"
+    >
       <template v-slot:item.1>
         <v-card title="배지 입고 LOT 생성" flat>
           LOT 번호 생성 20240314-1
@@ -36,28 +40,24 @@
           일자별 배지온도 
         </v-card>
       </template>
-    </v-stepper>
-    <br/>
-    <h3>배지 - 해동</h3>
-    <v-stepper :items="['해동 입고', '해동', '해동 출고']">
-      <template v-slot:item.1>
+
+      <template v-slot:item.4>
         <v-card title="해동 입고" flat>
           해동실 입고일 저장
         </v-card>
       </template>
       
-      <template v-slot:item.2>
+      <template v-slot:item.5>
         <v-card title="해동" flat>
          해동실 온도,습도,Co2,광도 조절
-         
+
         </v-card>
       </template>
       
-      <template v-slot:item.3>
+      <template v-slot:item.6>
         <v-card title="해동 출고" flat>
           해동실 출고일 저장
         </v-card>
       </template>
-
     </v-stepper>
   </template>
