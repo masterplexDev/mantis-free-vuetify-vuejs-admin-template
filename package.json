@@ -23,6 +23,7 @@
     "@tiptap/vue-3": "2.1.7",
     "ant-design-vue": "^4.1.2",
     "apexcharts": "^3.44.2",
+    "bun": "^1.0.33",
     "pinia": "2.1.6",
     "vee-validate": "4.11.3",
     "vite-plugin-vuetify": "1.0.2",
