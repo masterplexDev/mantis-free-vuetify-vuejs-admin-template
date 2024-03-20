@@ -14,17 +14,17 @@ import FooterPanel from './footer/FooterPanel.vue';
 
       <v-main class="page-wrapper">
         <v-container class="ma-0">
-          <div>
+          <v-col cols="12" class="ma-0 pa-0">
             <!-- Loader start -->
             <LoaderWrapper />
             <!-- Loader end -->
             <RouterView />
-          </div>
+          </v-col>
         </v-container>
         <v-container class="pa-0">
-          <div>
+          <v-col cols="12" class="ma-0 pa-0">
             <FooterPanel />
-          </div>
+          </v-col>
         </v-container>
       </v-main>
     </v-app>
