@@ -1,9 +1,11 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/types/.d.ts"],
+  "include": ["env.d.ts","src/**/*.vue", "src/types/.d.ts"],
   "compilerOptions": {
       /* Basic Options */
-      "baseUrl"             : "."
+      "baseUrl" : ".",
+      "target"  : "ES2021",                                   // ECMAScript 기준
+      "lib"     : ["dom","ES6","ES2021"]                     // 문법 lib 추가 
 
 
       /* Strict Type-Checking Options */

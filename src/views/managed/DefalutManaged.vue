@@ -2,10 +2,8 @@
 import { ref, shallowRef } from 'vue';
 
 import BaseBreadcrumb   from '@/components/shared/BaseBreadcrumb.vue';
-import RawInput         from './components/Rawinput.vue';
 import Cultivation      from './components/Cultivation.vue';
 import Growth           from './components/Growth.vue';
-import Sub_Manufacture  from './components/Sub_Manufacture.vue';
 import Sub_Receipt      from './components/Sub_Receipt.vue';
 
 const page = ref({ title: '표고 농장 생산 관리' });
