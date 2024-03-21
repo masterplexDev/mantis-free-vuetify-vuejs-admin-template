@@ -16,12 +16,16 @@ import '@fontsource/public-sans/500.css';
 import '@fontsource/public-sans/600.css';
 import '@fontsource/public-sans/700.css';
 
+
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
+
 //Mock Api data
-import { fakeBackend } from '@/utils/helpers/fake-backend';
+import { fakeBackend } from './utils/helpers/fake-backend';
 
 //i18
 import { createI18n } from 'vue-i18n';
-import messages from '@/utils/locales/messages';
+import messages from './utils/locales/messages';
 
 const i18n = createI18n({
   locale: 'en',
@@ -40,3 +44,4 @@ app.use(Antd);
 app.use(i18n);
 app.use(VueApexCharts);
 app.use(vuetify).mount('#app');
+app.component('VueDatePicker', VueDatePicker);

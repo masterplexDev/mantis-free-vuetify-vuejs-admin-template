@@ -21,7 +21,7 @@ import FooterPanel from './footer/FooterPanel.vue';
             <RouterView />
           </v-col>
         </v-container>
-        <v-container class="pa-0">
+        <v-container>
           <v-col cols="12" class="ma-0 pa-0">
             <FooterPanel />
           </v-col>

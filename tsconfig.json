@@ -5,7 +5,7 @@
       /* Basic Options */
       "baseUrl" : ".",
       "target"  : "ES2021",                                   // ECMAScript 기준
-      "lib"     : ["dom","ES6","ES2021"]                     // 문법 lib 추가 
+      "lib"     : ["dom","ES6","ES2021","ES2020"]                     // 문법 lib 추가 
 
 
       /* Strict Type-Checking Options */
