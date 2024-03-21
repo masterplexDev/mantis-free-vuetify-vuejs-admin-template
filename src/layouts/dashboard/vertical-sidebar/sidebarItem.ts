@@ -40,6 +40,11 @@ const sidebarItem: menu[] = [
     icon: DatabaseOutlined,
     to: '/managed'
   },
+  {
+    title: '표고 농장 배양동 현황',
+    icon: DashboardOutlined,
+    to: '/status'
+  },
   // { header: 'Authentication' },
   // {
   //   title: 'Login',

@@ -12,6 +12,11 @@ const MainRoutes = {
       component: () => import('@/views/dashboard/DefaultDashboard.vue')
     },
     {
+      name: 'Status',
+      path: '/status',
+      component: () => import('@/views/status/DefalutStatus.vue')
+    },
+    {
       name: 'Managed',
       path: '/managed',
       component: () => import('@/views/managed/DefalutManaged.vue')

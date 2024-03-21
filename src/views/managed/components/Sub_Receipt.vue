@@ -44,7 +44,7 @@ export default defineComponent({
           }   
         , step3_data          : 
           { 
-              etc             : ''       // 냉동정도
+              etc             : '[2024-3-21] 특이사항 발견 \n배지 검수 중 일부 30% 의 배지에서 불량이 발생하고 균 분포도가 너무 늘어난 관계로 온도가 너무 높거나 조절에 실패하여\n불량 배지가 늘어난것을 판단 됩니다. 온도 조절기 점검이 필요하며, 주기적인 관리가 필요합니다.'       // 냉동정도
           },     
     };
   },
@@ -102,9 +102,10 @@ export default defineComponent({
         <v-card title="배지 검수 (기본) 입력" flat
         subtitle  = "배지 검수 내역 등록 및 설정">
 
-          <v-row class="mt-5">
-            <v-col class="ml-5">
-              <v-row>
+        <v-row>
+            <v-col cols="6"></v-col>
+            <v-col cols="6" class="justify-end float-right" >
+              <v-row class="justify-end pr-5">
                   <span class="ma-2 text-overline"> 생성된 LOT 번호 </span>
                   <v-chip>{{ dataStore.user.lot }}</v-chip>
               </v-row>
@@ -370,6 +371,16 @@ export default defineComponent({
       <template v-slot:item.3>
         <v-card title="배지 검수 (특이사항) 입력" flat
         subtitle  = "특이사항 별도 입력">
+          <v-row>
+            <v-col cols="6"></v-col>
+            <v-col cols="6" class="justify-end float-right" >
+              <v-row class="justify-end pr-5">
+                  <span class="ma-2 text-overline"> 생성된 LOT 번호 </span>
+                  <v-chip>{{ dataStore.user.lot }}</v-chip>
+              </v-row>
+            </v-col>
+          </v-row>
+
          <v-row>
             <v-col class="ma-5">
               <v-textarea 
