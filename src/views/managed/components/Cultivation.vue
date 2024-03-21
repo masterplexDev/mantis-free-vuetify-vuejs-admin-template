@@ -1,6 +1,6 @@
 
 <template>
-    <v-stepper :items="['배양 입고', '배양', '배양 출고', 'Daliy Report', '배양 메뉴얼']">
+    <v-stepper :items="['배양 입고', '배양', '배양 출고']">
         <template v-slot:item.1>
           <v-card title="배양실 입고" flat>
               LOT 배양실 입고 시간, 날짜 등록               
@@ -29,7 +29,7 @@
           </v-card>
         </template>
 
-        <template v-slot:item.4>
+        <!-- <template v-slot:item.4>
           <v-card title="배양 Daliy report" flat>
             배양실 현황을 고려한 Daly report 생성 - 배양실 현황 확인, 추적 
           </v-card>
@@ -41,6 +41,6 @@
             배양 메뉴얼 관리 - 배양 일자별 온도, 습도 Co2 내부온도 (온도 중심 관리)
             
           </v-card>
-        </template>
+        </template> -->
     </v-stepper>
 </template>

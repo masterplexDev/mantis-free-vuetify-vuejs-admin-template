@@ -45,7 +45,11 @@ export default defineComponent({
         , step3_data          : 
           { 
               etc             : '[2024-3-21] 특이사항 발견 \n배지 검수 중 일부 30% 의 배지에서 불량이 발생하고 균 분포도가 너무 늘어난 관계로 온도가 너무 높거나 조절에 실패하여\n불량 배지가 늘어난것을 판단 됩니다. 온도 조절기 점검이 필요하며, 주기적인 관리가 필요합니다.'       // 냉동정도
-          },     
+          }
+        , step4_data :{
+              import_lot : [] as Array<string>
+            , export_lot : [] as Array<string>
+          }      
     };
   },
   methods:{
@@ -62,6 +66,16 @@ export default defineComponent({
       increment () {
         this.step2_data.temperature++;
       },
+      frozen_insert(lot_number : string){
+        
+        this.step4_data.import_lot.push(lot_number);
+      },
+      formatDate(date: Date) {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const day = String(date.getDate()).padStart(2, '0');
+          return `${year}-${month}-${day}`;
+      }
   }
 
 });
@@ -95,6 +109,16 @@ export default defineComponent({
               <v-btn @click="getlot()"> LOT 생성 </v-btn>
             </v-col>
           </v-row>
+          <v-row>
+            <v-col cols="12" class="ml-4">
+              <h4>금일 등록된 배지 LOT 번호</h4>
+              <v-chip-group >
+                <v-chip v-for="item in dataStore.lot_list">
+                  {{ item.lot_no }}
+                </v-chip>
+              </v-chip-group>
+            </v-col>
+          </v-row>
         </v-card>
       </template>
       
@@ -102,7 +126,7 @@ export default defineComponent({
         <v-card title="배지 검수 (기본) 입력" flat
         subtitle  = "배지 검수 내역 등록 및 설정">
 
-        <v-row>
+          <v-row>
             <v-col cols="6"></v-col>
             <v-col cols="6" class="justify-end float-right" >
               <v-row class="justify-end pr-5">
@@ -269,6 +293,7 @@ export default defineComponent({
                       @click="toggle"
                     >
                     {{ option }}
+                
                   </v-btn>
                 </v-slide-group-item>
               </v-slide-group>
@@ -403,7 +428,34 @@ export default defineComponent({
 
       <template v-slot:item.4>
         <v-card title="해동 입고" flat>
-          해동실 입고일 저장
+          <v-row>
+            <v-col cols="6" class="ml-4">
+                <v-sheet :border=true v-for="n in dataStore.lot_list"
+                :key="n"> 
+                  <v-row>
+                    <v-col class="ma-2" cols="3"><v-chip>{{ n.lot_no }} </v-chip></v-col>
+                    <v-col cols="5">  
+                      <VueDatePicker 
+                        v-if = !n.import_yn
+                        v-model   ="n.import_date"
+                        format="yyyy-MM-dd"
+                        :auto-apply=true
+                        :teleport = true
+                        :enable-time-picker="false" 
+                        :format-locale="ko"
+                      />
+                      <div v-else class="mt-3">
+                        해동 입고일 - {{ formatDate(n.import_date) }}
+                      </div>
+                    </v-col>
+                    <v-col cols="3">
+                      <v-btn v-if = !n.import_yn color="primary" @click="n.import_yn=true">해동 입고처리</v-btn>
+                      <v-btn color="error" v-else @click="n.import_yn=false">해동 입고처리 해제</v-btn>
+                    </v-col>
+                  </v-row>
+                </v-sheet>
+            </v-col>
+          </v-row>
         </v-card>
       </template>
       
