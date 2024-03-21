@@ -9,7 +9,8 @@ import {
   BgColorsOutlined,
   BarcodeOutlined,
   CrownOutlined,
-  DatabaseOutlined
+  DatabaseOutlined,
+  FundOutlined,
 } from '@ant-design/icons-vue';
 
 export interface menu {
@@ -36,14 +37,14 @@ const sidebarItem: menu[] = [
     to: '/dashboard'
   },
   {
+    title: '표고 농장 배양동 현황',
+    icon: FundOutlined,
+    to: '/status'
+  },
+  {
     title: '표고 농장 생산 관리',
     icon: DatabaseOutlined,
     to: '/managed'
-  },
-  {
-    title: '표고 농장 배양동 현황',
-    icon: DashboardOutlined,
-    to: '/status'
   },
   // { header: 'Authentication' },
   // {
