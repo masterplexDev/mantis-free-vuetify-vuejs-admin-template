@@ -1,30 +1,36 @@
 
 <template>
-    <v-stepper :items="['배양 입고', '배양', '배양 출고']">
+    <v-stepper :items="['배양 입고', '배양', '배양 출고']"
+        next-text="다음"
+        prev-text="이전"
+        >
         <template v-slot:item.1>
           <v-card title="배양실 입고" flat>
-              LOT 배양실 입고 시간, 날짜 등록               
+              <!-- LOT 배양실 입고 시간, 날짜 등록                -->
+              <v-skeleton-loader type="card"></v-skeleton-loader>
           </v-card>
         </template>
     
         <template v-slot:item.2>
           <v-card title="배양" flat>
-            배양관리<br/> 
+            <!-- 배양관리<br/> 
               배양동 온도, 습도, CO2, 광도조절, - 입력 <br/>
               환경변화시 알림 (온습도 광도 상하한선 등록 / 알림 연락처 등록 ) - 조작<br/>
               전체배양 현황 확인 대시보드 <br/>
               배지 온도, 무게, 색상, 방 조도 <br/>
               배양 특이사항 기록,<br/>
               배양 이동 - 배양실 위치 이동 / 이동 등록 <br/>
-              타공 -????? / 배지의 타공 유무<br/>
+              타공 -????? / 배지의 타공 유무<br/> -->
+              <v-skeleton-loader type="card"></v-skeleton-loader>
 
           </v-card>
         </template>
     
         <template v-slot:item.3>
           <v-card title="배양 출고" flat>
-            배양 출고 - 배양 LOT 출고시 새롭게 LOT 분할생성이라고 적었지만
-            결국 출고 LOT 기준으로 관리 하게 끔 재생성
+            <!-- 배양 출고 - 배양 LOT 출고시 새롭게 LOT 분할생성이라고 적었지만
+            결국 출고 LOT 기준으로 관리 하게 끔 재생성 -->
+            <v-skeleton-loader type="card"></v-skeleton-loader>
 
           </v-card>
         </template>

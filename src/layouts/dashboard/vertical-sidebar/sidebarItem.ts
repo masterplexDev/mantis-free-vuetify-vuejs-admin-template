@@ -36,11 +36,11 @@ const sidebarItem: menu[] = [
     icon: DashboardOutlined,
     to: '/dashboard'
   },
-  {
-    title: '표고 농장 배양동 현황',
-    icon: FundOutlined,
-    to: '/status'
-  },
+  // {
+  //   title: '표고 농장 배양동 현황',
+  //   icon: FundOutlined,
+  //   to: '/status'
+  // },
   {
     title: '표고 농장 생산 관리',
     icon: DatabaseOutlined,

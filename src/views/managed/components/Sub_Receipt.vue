@@ -47,7 +47,7 @@ export default defineComponent({
           }   
         , step3_data          : 
           { 
-              etc             : '[2024-3-21] 특이사항 발견 \n배지 검수 중 일부 30% 의 배지에서 불량이 발생하고 균 분포도가 너무 늘어난 관계로 온도가 너무 높거나 조절에 실패하여\n불량 배지가 늘어난것을 판단 됩니다. 온도 조절기 점검이 필요하며, 주기적인 관리가 필요합니다.'       // 냉동정도
+              etc             : '[2024-03-21] 특이사항 발견 \n배지 검수 중 일부 30% 의 배지에서 불량이 발생하고 균 분포도가 너무 늘어난 관계로 온도가 너무 높거나 조절에 실패하여\n불량 배지가 늘어난것을 판단 됩니다. 온도 조절기 점검이 필요하며, 주기적인 관리가 필요합니다.'       // 냉동정도
           }
         , step4_data :{
               import_lot : [] as Array<string>
@@ -84,6 +84,9 @@ export default defineComponent({
           const month = String(date.getMonth() + 1).padStart(2, '0');
           const day = String(date.getDate()).padStart(2, '0');
           return `${year}-${month}-${day}`;
+      },
+      import_count(){
+        return dataStore.lot_list.filter((item: { import_yn: boolean; }) => item.import_yn == true).length
       }
   }
 
@@ -485,7 +488,7 @@ export default defineComponent({
               <v-card-text>
                 <div class="d-flex align-items-center justify-space-between">
                   <div>
-                    <span class="text-h1 font-weight-light">{{ step5_data.import_count }}</span>
+                    <span class="text-h1 font-weight-light">{{ import_count() }}</span>
                     <span class="subheading font-weight-reguler me-1 mt-4 ml-2">LOT(개)</span>
                   </div>
                 </div>
@@ -527,7 +530,39 @@ export default defineComponent({
       
       <template v-slot:item.6>
         <v-card title="해동 출고" flat>
-          해동실 출고일 저장
+          <v-alert
+            text="해동 출고 처리 후 배양 프로세스로 이동합니다."
+            title="해동 출고"
+            type="success"
+          ></v-alert>
+          <v-row>
+            <v-col cols="6" class="ml-4 mt-2">
+                <v-sheet :border=true v-for="n in dataStore.lot_list"
+                :key="n"> 
+                  <v-row>
+                    <v-col class="ma-2" cols="3"><v-chip>{{ n.lot_no }} </v-chip></v-col>
+                    <v-col cols="5">  
+                      <VueDatePicker 
+                        v-if = !n.export_yn
+                        v-model   ="n.export_date"
+                        format="yyyy-MM-dd"
+                        :auto-apply=true
+                        :teleport = true
+                        :enable-time-picker="false" 
+                        :format-locale="ko"
+                      />
+                      <div v-else class="mt-3">
+                        해동 출고일 - {{ formatDate(n.export_date) }}
+                      </div>
+                    </v-col>
+                    <v-col cols="3">
+                      <v-btn v-if = !n.export_yn color="primary" @click="n.export_yn=true">해동 출고처리</v-btn>
+                      <v-btn color="error" v-else @click="n.export_yn=false">해동 출고처리 해제</v-btn>
+                    </v-col>
+                  </v-row>
+                </v-sheet>
+            </v-col>
+          </v-row>
         </v-card>
       </template>
     </v-stepper>
