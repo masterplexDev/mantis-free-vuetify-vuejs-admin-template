@@ -1,11 +1,14 @@
 <script setup lang="ts">
-  import { defineComponent }  from "vue";
+  import { defineComponent,ref }  from "vue";
   import { useDataStore }     from '@/stores/data_store';
   import { ko } from 'date-fns/locale';
 </script>
 
 <script lang="ts">
 const dataStore = useDataStore();
+
+const counting = ref(dataStore.lot_list.filter((item: { import_yn: boolean; }) => item.import_yn == true).length);
+
 
 export default defineComponent({
   computed :{
@@ -49,7 +52,13 @@ export default defineComponent({
         , step4_data :{
               import_lot : [] as Array<string>
             , export_lot : [] as Array<string>
-          }      
+          }
+        ,step5_data : {
+              import_count : dataStore.lot_list.filter((item: { import_yn: boolean; }) => item.import_yn == true).length
+            , export_count : 4
+            , import_ing_count : 5
+        }
+              
     };
   },
   methods:{
@@ -460,10 +469,60 @@ export default defineComponent({
       </template>
       
       <template v-slot:item.5>
-        <v-card title="해동" flat>
-         해동실 온도,습도,Co2,광도 조절
-
+        <v-card title="해동 (조작부)" flat>
+          <v-alert
+            text="해동 관련 조작은 패널에서 직접 컨트롤 합니다"
+            title="조작 Offline"
+            type="info"
+          ></v-alert>
+            <br/>
         </v-card>
+
+        <v-card elevation="0">
+          <v-row>
+            <v-col cols="4">
+            <v-card variant="outlined" title="해동 금일 입고">
+              <v-card-text>
+                <div class="d-flex align-items-center justify-space-between">
+                  <div>
+                    <span class="text-h1 font-weight-light">{{ step5_data.import_count }}</span>
+                    <span class="subheading font-weight-reguler me-1 mt-4 ml-2">LOT(개)</span>
+                  </div>
+                </div>
+              </v-card-text>
+            </v-card>
+            </v-col>
+
+            <v-col cols="4">
+            <v-card variant="outlined" title="해동 진행 중">
+              <v-card-text>
+                <div class="d-flex align-items-center justify-space-between">
+                  <div>
+                    <span class="text-h1 font-weight-light">
+                      {{ step5_data.import_ing_count }}
+                    </span>
+                    <span class="subheading font-weight-reguler me-1 mt-4 ml-2">LOT(개)</span>
+                  </div>
+                </div>
+              </v-card-text>
+            </v-card>
+            </v-col>
+
+            <v-col cols="4">
+            <v-card variant="outlined" title="해동 출고 예정">
+              <v-card-text>
+                <div class="d-flex align-items-center justify-space-between">
+                  <div>
+                    <span class="text-h1 font-weight-light">{{ step5_data.export_count }}</span>
+                    <span class="subheading font-weight-reguler me-1 mt-4 ml-2">LOT(개)</span>
+                  </div>
+                </div>
+              </v-card-text>
+            </v-card>
+            </v-col>
+          </v-row>
+        </v-card>
+
       </template>
       
       <template v-slot:item.6>
